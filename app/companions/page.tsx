@@ -5,6 +5,8 @@ import SearchInput from "@/components/SearchInput";
 import SubjectFilter from "@/components/SubjectFilter";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
 
 const CompanionsLibrary = async ({ searchParams }: SearchParams) => {
   const { userId } = await auth();
@@ -22,6 +24,12 @@ const CompanionsLibrary = async ({ searchParams }: SearchParams) => {
         <div className="flex gap-4">
           <SearchInput />
           <SubjectFilter />
+          <button className="btn-primary w-50">
+            <Image src="/icons/plus.svg" alt="plus" width={12} height={12} />
+            <Link href="/companions/new">
+              <p>New</p>
+            </Link>
+          </button>
         </div>
       </section>
       <section className="companions-grid">
