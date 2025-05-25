@@ -1,9 +1,7 @@
-import React from 'react'
+import { SignIn } from '@clerk/nextjs'
 
-const SignIn = () => {
-  return (
-    <div>SignIn</div>
-  )
+export default function Page() {
+    return <main className="flex items-center justify-center">
+        <SignIn />
+    </main>
 }
-
-export default SignIn
